@@ -43,23 +43,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 23
   },
+
   title: {
     textAlign: 'center',
     fontSize: 35,
     fontWeight: 600,
     color: '#1F41BB',
-  
   },
     subtitle: {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    width: 343,
+    width: 300,
     height: 106,
     fontSize: 14,
     fontWeight: 400,
-    marginLeft: 42,
-    marginRight: 42
+    color: '#6A6A6A',
   },
 
   buttonBox: {
