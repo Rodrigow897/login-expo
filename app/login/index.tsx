@@ -27,8 +27,8 @@ export default function LoginScreen() {
                 <Text style={styles.otherWaysLoginText} >Or continue with</Text>
                 <View style={styles.IconsBox}>
                     <TouchableOpacity style={styles.iconsButton}><FontAwesome name="google" size={24} color="black" /></TouchableOpacity>
-                    <TouchableOpacity><FontAwesome name="facebook" size={24} color="black" /></TouchableOpacity>
-                    <TouchableOpacity><FontAwesome name="apple" size={24} color="black" /></TouchableOpacity>
+                    <TouchableOpacity style={styles.iconsButton}><FontAwesome name="facebook" size={24} color="black" /></TouchableOpacity>
+                    <TouchableOpacity style={styles.iconsButton}><FontAwesome name="apple" size={24} color="black" /></TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
         gap: 20,
         width: 200,
         position: 'absolute',
-        bottom: 150,
+        bottom: 120,
     },
     otherWaysLoginText: {
         fontSize: 14,
