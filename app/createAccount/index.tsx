@@ -11,16 +11,16 @@ export default function LoginScreen() {
                 <Text style={styles.goBackText}>Go Back</Text>
             </TouchableOpacity>
             <View style={styles.titleBox}>
-            <Text style={styles.title}>Login here</Text>
-            <Text style={styles.subtitle}>Welcome back you’ve been missed!</Text>
+            <Text style={styles.title}>Create Account</Text>
+            <Text style={styles.subtitle}>Create an account so you can explore all the existing jobs</Text>
             </View>
 
             <View style={styles.inputBox}>
                 <TextInput style={styles.textInput} placeholder="Email"></TextInput>
                 <TextInput style={styles.textInput} placeholder="Password"></TextInput>
-                <TouchableOpacity><Text style={styles.forgotText}>Forgot your password?</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.signInButton} ><Text style={styles.signInText}>Sign in</Text></TouchableOpacity>
-                <TouchableOpacity onPress={() => router.push('/createAccount')}><Text style={styles.createNewText}>Create new account</Text></TouchableOpacity>
+                <TextInput style={styles.textInput} placeholder="Confirm Password"></TextInput>
+                <TouchableOpacity onPress={() => router.push('/wellcome')} style={styles.signInButton} ><Text style={styles.signInText}>Sign in</Text></TouchableOpacity>
+                <TouchableOpacity><Text style={styles.createNewText}>Already have an account</Text></TouchableOpacity>
             </View>
 
             <View style={styles.otherWaysLoginBox}>
@@ -55,10 +55,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        width: 200,
-        gap: 26,
+        width: 300,
+        gap: 10,
         position: 'absolute',
-        top: 130,
+        top: 110,
     },
     title: {
         fontSize: 30,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     subtitle: {
-        fontSize: 20,
+        fontSize: 14,
         fontWeight: '600',
         textAlign: 'center',
     },
@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
         width: 340,
         gap: 20,
         justifyContent: 'center',
+        marginTop: 50,
     },
     textInput: {
         borderWidth: 1,
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
         width: 340,
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: 40,
     },
     signInText: {
         color: '#FFFFFF',
@@ -115,7 +117,7 @@ const styles = StyleSheet.create({
         gap: 20,
         width: 200,
         position: 'absolute',
-        bottom: 120,
+        bottom: 70,
     },
     otherWaysLoginText: {
         fontSize: 14,
