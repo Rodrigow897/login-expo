@@ -1,3 +1,4 @@
+import FontAwesome from '@expo/vector-icons/FontAwesome6';
 import { router } from "expo-router";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
@@ -20,6 +21,13 @@ export default function LoginScreen() {
                 <TouchableOpacity><Text style={styles.forgotText}>Forgot your password?</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.signInButton} ><Text style={styles.signInText}>Sign in</Text></TouchableOpacity>
                 <TouchableOpacity><Text style={styles.createNewText}>Create new account</Text></TouchableOpacity>
+            </View>
+
+            <View style={styles.otherWaysLoginBox}>
+                <Text style={styles.otherWaysLoginText} >Or continue with</Text>
+                <View>
+                    <TouchableOpacity><FontAwesome name="facebook" size={24} color="black" /></TouchableOpacity>
+                </View>
             </View>
         </View>
     );
@@ -98,5 +106,20 @@ const styles = StyleSheet.create({
         fontWeight: 600,
         fontSize: 14,
         color: '#494949',
+        marginTop: 15,
+    },
+    otherWaysLoginBox: {
+        justifyContent: 'space-between',
+        gap: 20,
+        width: 200,
+        position: 'absolute',
+        bottom: 150,
+    },
+    otherWaysLoginText: {
+        fontSize: 14,
+        textAlign: 'center',
+        width: '100%',
+        color: '#1F41BB',
+        fontWeight: 600,
     }
 });
