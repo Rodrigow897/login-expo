@@ -17,6 +17,9 @@ export default function LoginScreen() {
             <View style={styles.inputBox}>
                 <TextInput style={styles.textInput} placeholder="Email"></TextInput>
                 <TextInput style={styles.textInput} placeholder="Password"></TextInput>
+                <TouchableOpacity><Text style={styles.forgotText}>Forgot your password?</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.signInButton} ><Text style={styles.signInText}>Sign in</Text></TouchableOpacity>
+                <TouchableOpacity><Text style={styles.createNewText}>Create new account</Text></TouchableOpacity>
             </View>
         </View>
     );
@@ -70,5 +73,30 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
         backgroundColor: '#F1F4FF',
         height: 64,
+    },
+    forgotText: {
+        textAlign: 'right',
+        color: '#1F41BB',
+        fontWeight: 600,
+        fontSize: 14,
+    },
+    signInButton: {
+        backgroundColor: '#1F41BB',
+        height: 64,
+        borderRadius: 10,
+        width: 340,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    signInText: {
+        color: '#FFFFFF',
+        fontWeight: 600,
+        fontSize: 20,
+    },
+    createNewText: {
+        textAlign: 'center',
+        fontWeight: 600,
+        fontSize: 14,
+        color: '#494949',
     }
 });
