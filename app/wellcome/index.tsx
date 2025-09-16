@@ -1,12 +1,13 @@
+import { router } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-        <TouchableOpacity><Text>Back to login</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/login')} style={styles.backButton}><Text style={styles.goBackText}>Back to login</Text></TouchableOpacity>
       <View style={styles.textBox}>
-        <Text style={styles.title}>Discover Your Dream Job here</Text>
-        <Text style={styles.subtitle}>Explore all the existing job roles based on your interest and study major</Text>
+        <Text style={styles.title}>Hello!</Text>
+        <Text style={styles.subtitle}>This is my first React Native App.</Text>
       </View>
     </View>
   );
@@ -18,6 +19,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+
+  backButton: {
+    position: 'absolute',
+    top: 50,
+    left: 20,
+},
+    goBackText:{
+    fontSize: 14,
+    color: '#000000',
+    fontWeight: 700,
+    },
+
   image: {
     width: 368,
     height: 331,
@@ -46,7 +59,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 106,
     fontSize: 14,
-    fontWeight: 400,
-    color: '#6A6A6A',
+    fontWeight: 500,
+    color: '#000000',
   }
 });
