@@ -25,8 +25,10 @@ export default function LoginScreen() {
 
             <View style={styles.otherWaysLoginBox}>
                 <Text style={styles.otherWaysLoginText} >Or continue with</Text>
-                <View>
+                <View style={styles.IconsBox}>
+                    <TouchableOpacity style={styles.iconsButton}><FontAwesome name="google" size={24} color="black" /></TouchableOpacity>
                     <TouchableOpacity><FontAwesome name="facebook" size={24} color="black" /></TouchableOpacity>
+                    <TouchableOpacity><FontAwesome name="apple" size={24} color="black" /></TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -121,5 +123,18 @@ const styles = StyleSheet.create({
         width: '100%',
         color: '#1F41BB',
         fontWeight: 600,
+    },
+    IconsBox: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: 200,
+    },
+    iconsButton: {
+        backgroundColor: '#dcdbdbff',
+        width: 60,
+        height: 44,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
     }
 });
