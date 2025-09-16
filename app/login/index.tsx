@@ -19,8 +19,8 @@ export default function LoginScreen() {
                 <TextInput style={styles.textInput} placeholder="Email"></TextInput>
                 <TextInput style={styles.textInput} placeholder="Password"></TextInput>
                 <TouchableOpacity><Text style={styles.forgotText}>Forgot your password?</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.signInButton} ><Text style={styles.signInText}>Sign in</Text></TouchableOpacity>
-                <TouchableOpacity onPress={() => router.push('/createAccount')}><Text style={styles.createNewText}>Create new account</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => router.push('/wellcome')}style={styles.signInButton} ><Text style={styles.signInText}>Sign in</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => router.push('/create')}><Text style={styles.createNewText}>Create new account</Text></TouchableOpacity>
             </View>
 
             <View style={styles.otherWaysLoginBox}>
