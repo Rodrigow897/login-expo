@@ -1,8 +1,29 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome6';
 import { router } from "expo-router";
+import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { createNewUser } from '../api';
 
 export default function LoginScreen() {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleCreateAccount = async () => {
+        // Chama a função importada
+        const { status, data } = await createNewUser(name, email, password);
+
+        if (status === 201) {
+            console.log('Usuário criado com sucesso:', data);
+            // Redireciona para outra tela após o sucesso
+            router.push('/welcome');
+        } else {
+            console.error('Erro ao criar o usuário:', data.error);
+            // Mostra uma mensagem de erro na UI
+        }
+    };
+
     return (
         <View style={styles.container}>
             <TouchableOpacity 
@@ -16,10 +37,25 @@ export default function LoginScreen() {
             </View>
 
             <View style={styles.inputBox}>
-                <TextInput style={styles.textInput} placeholder="Email"></TextInput>
-                <TextInput style={styles.textInput} placeholder="Password"></TextInput>
-                <TextInput style={styles.textInput} placeholder="Confirm Password"></TextInput>
-                <TouchableOpacity onPress={() => router.push('/welcome')} style={styles.signInButton} ><Text style={styles.signInText}>Sign in</Text></TouchableOpacity>
+                <TextInput
+                   value={name}
+                   onChangeText={setName}
+                   style={styles.textInput}
+                   placeholder="Name">    
+                </TextInput>
+                <TextInput
+                    value={email}
+                   onChangeText={setEmail}
+                   style={styles.textInput}
+                   placeholder="email"> 
+                </TextInput>
+                <TextInput 
+                    value={password}
+                   onChangeText={setPassword}
+                   style={styles.textInput}
+                   placeholder="password"> 
+                </TextInput>
+                <TouchableOpacity onPress={handleCreateAccount} style={styles.signInButton} ><Text style={styles.signInText}>Sign in</Text></TouchableOpacity>
                 <TouchableOpacity onPress={() => router.push('/login')}><Text style={styles.createNewText}>Already have an account</Text></TouchableOpacity>
             </View>
 
